@@ -1,10 +1,10 @@
-# Simulated Annealing Algorithm (SA)
+# Simulated Annealing Algorithm (SA) 🌡️
 
 ## Introduction
 
 This is an example of Simulated Annealing Algorithm. The problem is to find an optimal solution for the Travelling Salesman Problem (TSP). The algorithm is tested on a set of *n* cities.
 
-## 1. The Travelling Salesman Problem contextualized
+## 1. The Travelling Salesman Problem contextualized 
 
 The TSP is a well-known problem in computer science. 
 
@@ -90,7 +90,7 @@ Every time the for loop is executed, the temperature is updated. In this case th
 
 The algorithm stops when the temperature is lower than a certain value. In this case, the algorithm stops when the temperature is lower than the value you set in `while T > 5`.
 
-### A graph to illustrate the behavior expected from the algoritm
+### A graph to illustrate the behavior expected from the algoritm 📉
 
 ![](images/output_sa.png)
 
