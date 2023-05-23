@@ -19,13 +19,13 @@ The subsequent sections will provide a brief overview of these concepts.
 
 In essence, a *combinatorial optimization* problem revolves around a set of *potential solutions*, coupled with a *cost function* that ascribes a cost (expressed as a numerical value) to each of these solutions. 
 
-The methods that solve combinatorial optimización problems can be divided into two groups: *deterministic and stochastic.* In this context, a stochastic method has been employed, characterized by the use of statistical data with stochastic parameters. These parameters exert a significant influence over the optimization process, allowing it to solve the problem from a probabilistic perspective [1].
+The methods that solve combinatorial optimización problems can be divided into two groups: *deterministic and stochastic.* In this context, a stochastic method has been employed, characterized by the use of statistical data with stochastic parameters. These parameters exert a significant influence over the optimization process, allowing it to solve the problem from a probabilistic perspective [[1]](https://www.sciencedirect.com/science/article/pii/S187705091930119X).
 
 Simulated annealing is a special case of a more general class of *adaptive heuristics* for combinatorial optimization. 
 
-The term *adaptive* means that the algorithm parameters are adjusted during the optimization process. This modification could be done by some learning mechanism or by user interaction [2].
+The term *adaptive* means that the algorithm parameters are adjusted during the optimization process. This modification could be done by some learning mechanism or by user interaction [[2]](https://www.researchgate.net/publication/4218709_Simulated_Annealing_and_Combinatorial_Optimization).
 
-The term *heuristic*, in this context, means that the algorithm does not guarantee to find the optimal solution, but it is fast and it finds a good solution in most cases [2].
+The term *heuristic*, in this context, means that the algorithm does not guarantee to find the optimal solution, but it is fast and it finds a good solution in most cases [[2]](https://www.researchgate.net/publication/4218709_Simulated_Annealing_and_Combinatorial_Optimization).
 
 ## 3. Stochastic processes
 
@@ -90,16 +90,24 @@ Every time the for loop is executed, the temperature is updated. In this case th
 
 The algorithm stops when the temperature is lower than a certain value. In this case, the algorithm stops when the temperature is lower than the value you set in `while T > 5`.
 
-### A graph to illustrate the behavior expected from the algoritm 📉
+#### A graph to illustrate the behavior expected from the algoritm 📉
 
 ![](images/output_sa.png)
 
+This is a typical behavior we expect from the algorithm in case that we want to *minimize* the cost of the solution.
+As we see from the graph, in x axis we have the number of iterations and in y axis we have the cost of the solution.
 
+It's interesting to see that the behavior in the first iterations is very unstable. This is because the temperature is high and the probability of accepting the error is high. So, the algorithm is gonna accept the error even if the error is positive. But, as we move forward in the algorithm, the temperature is lower and the probability of accepting the error is lower. So, the algorithm is gonna accept the error only if the error is negative.
+## References 
 
+[1] Grabusts, P., Musatovs, J., & Golenkov, V. (2018). The application of simulated annealing method for optimal route detection between objects. ICTE in Transportation and Logistics 2018 (ICTE 2018). Rezekne Academy of Technologies, Atbrivoshanas al. 115, Rezekne, LV-4601, Latvia & Belarusian State University of Informatics and Radioelectronics, Minsk, st. Platonov 39, Belarus.
 
+[2] Nahar, S., Sahni, S., & Shragowitz, E. (1986). Simulated Annealing and Combinatorial Optimization. En Design Automation, 1986. 23rd Conference on. IEEE Xplore. DOI: 10.1109/DAC.1986.1586103.
 
+[3] Johnson, D. S., Aragon, C. R., McGeoch, L. A., & Chevon, C. (1989). Optimization by simulated annealing: An experimental evaluation - Part 1, Graph partitioning. Operations Research, 37(6), 865-92.
 
-
+## Contact
+Patricia Munoz - munpaty@gmail.com
 
 
 
