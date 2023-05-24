@@ -1,2 +1,5 @@
 # Ignore requirements.in
 requirements.in
+
+# Ignore data
+data
