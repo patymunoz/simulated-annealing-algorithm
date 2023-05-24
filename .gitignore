@@ -3,3 +3,9 @@ requirements.in
 
 # Ignore data
 data
+
+# Ignore git
+.git
+
+# Ignore ipynb checkpoints
+.ipynb_checkpoints

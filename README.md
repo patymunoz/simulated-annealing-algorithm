@@ -32,20 +32,19 @@ a) `generate-distances.ipynb`
 
 b) `simulated-annealing.ipynb`
 
-You must run `generate-distances.ipynb` first to generate the distances between the cities. Then, you can run `simulated-annealing.ipynb` to find the optimal solution for the TSP.
+You must run `generate-distances.ipynb` first to generate the distances between the cities. Then, you can run `simulated-annealing.ipynb` to find the optimal solution.
 
-In the `generate-distances.ipynb` feel free to change the name of the cities if you want. This example uses some cities of Mexico, but you can adapt it to your needs and even increase o decrease the number of cities; just be consious that increasing the number of cities will increase the time to create of the matrix of distances.
+In the `generate-distances.ipynb` feel free to change the name of the cities if you want. This example uses some cities of Mexico, but you can adapt it to your needs and even increase o decrease the number of cities; just be consious that increasing the number of cities will increase the time to create the matrix of distances.
 
 ## 1. The Travelling Salesman Problem contextualized 
 
 The TSP is a well-known problem in computer science. 
 
-The fundamental problem involves determining the shortest possible route that allows for visiting each city exactly once before returning to the origin city. The problem is posed with a given list of citites each pairde with the respective distnaces between them. 
+The fundamental problem involves determining the *shortest possible route* that allows for visiting each city exactly once before returning to the origin city. The problem is posed with a given list of citites each pair with the respective distances between them. 
 
 The TSP is frequantly solved using the Simulated Annealing approach, which leverages *combinatorial optimization* and incorporates elements of *stochastic methods*. 
 
 The subsequent sections will provide a brief overview of these concepts.
-
 
 ## 2. Combinatorial Optimization
 
@@ -59,20 +58,26 @@ The term *adaptive* means that the algorithm parameters are adjusted during the 
 
 The term *heuristic*, in this context, means that the algorithm does not guarantee to find the optimal solution, but it is fast and it finds a good solution in most cases [[2]](https://www.researchgate.net/publication/4218709_Simulated_Annealing_and_Combinatorial_Optimization).
 
-## 3. Stochastic processes
+## 3. Stochastic simulation and Monte Carlo
 
-Incorporating stochastic processes is a key component of this method, predominantly influencing how subsequent solutions are generated. The generation of the next solution is facilitated  by a random process, and the probability of generating a solution is related to the cost of the solution. The higher the cost, the lower the probability of generating that solution.
+As I mentioned before, methods that solve combinatorial optimización problems can be *deterministic and stochastic*. Here, an stochastic method known as *Monte Carlo* is used.
 
-With stochastics processs comes in mind the *theorem of central limit*, which states that the sum of a large number of independent random variables is approximately normally distributed. Here this is important because in code we're gonna have a `for` loop that will going to repeat as many times as we want. So, the more times we repeat the loop, the more the distribution of the solutions will be normal.
+The Monte Carlo method is a key component in two steps of the SA:
 
+**a) Generating new solutions.** SA uses random sampling to generate new potential solutions in the neghborhood of the current solution.
+
+**b) Decision making.** When a new solution is generated, it's not always accepted. The Monte Carlo methos is used to decide whether to accept or reject the new solution.
+
+
+With Monte Carlo comes in mind the *theorem of central limit*, which states that the sum of a large number of independent random variables is approximately normally distributed. Here this is important because in code we're gonna have a `for` loop that will going to repeat as many times as we want. So, the more times we repeat the loop, the more the distribution of the solutions will be normal. This is useful to understand the behavior and outcomes of the method. 
 
 ## 4. Intuition behind the Simulated Annealing
 
 The Simulated Annealing Algorithm is based on the physical process of annealing, which is a process of heating and cooling a material to alter its physical properties due to the changes in its internal structure.
 
-The algorithm is based on the following analogy:
+The algorithm is based on the following analogy from termodynamics:
 
-
+Basically, you will have a high temperature at the beginning and then you will cool down the system. The idea is that when you have a high temperature, the particles of a system will have a lot of energy and they will move randomly. But, as you cool down the system, the particles will have less energy and they will move less randomly. This can be seen if you plot the energy of the system vs the temperature. Below I leave an example of this. 
 
 ## 5. The Algorithm
 
@@ -116,11 +121,11 @@ But then we have the exponential function (q) which is the probability of accept
 
 #### 5.5. Cooling the temperature
 
-Every time the for loop is executed, the temperature is updated. In this case the have this formula: `T = 1000/(1+(t/5))`. But, notice that there are some other that we can use depending on the problem that we're trying to solve.
+Every time the for loop is executed, the temperature is updated. In this case the have this formula: `T = 1000/(1+(t/5))`. But, notice that there are some other that you can use depending on the problem that you're trying to solve.
 
 #### 5.6. Stop criteria
 
-The algorithm stops when the temperature is lower than a certain value. In this case, the algorithm stops when the temperature is lower than the value you set in `while T > 5`.
+The algorithm stops when the temperature is lower than a certain value. In this case, the algorithm stops when the temperature is lower than the value you set in `while T > 5`. Again, "5" it's a value that you can change depending on the problem that you're trying to solve.
 
 #### A graph to illustrate the behavior expected from the algoritm 📉
 
@@ -129,7 +134,7 @@ The algorithm stops when the temperature is lower than a certain value. In this 
 This is a typical behavior we expect from the algorithm in case that we want to *minimize* the cost of the solution.
 As we see from the graph, in x axis we have the number of iterations and in y axis we have the cost of the solution.
 
-It's interesting to see that the behavior in the first iterations is very unstable. This is because the temperature is high and the probability of accepting the error is high. So, the algorithm is gonna accept the error even if the error is positive. But, as we move forward in the algorithm, the temperature is lower and the probability of accepting the error is lower. So, the algorithm is gonna accept the error only if the error is negative.
+It's interesting to see that the behavior in the first iterations is very unstable. This is because the temperature is high and the probability of accepting the error is high. So, the algorithm is gonna accept the error even if the error is positive. But, as we move forward in the algorithm, the temperature is lower and the probability of accepting the error is lower. This is part of what I tried to explain in the previous intuition part so, I hope it helps you :)
 ## References 
 
 [1] Grabusts, P., Musatovs, J., & Golenkov, V. (2018). The application of simulated annealing method for optimal route detection between objects. ICTE in Transportation and Logistics 2018 (ICTE 2018). Rezekne Academy of Technologies, Atbrivoshanas al. 115, Rezekne, LV-4601, Latvia & Belarusian State University of Informatics and Radioelectronics, Minsk, st. Platonov 39, Belarus.
