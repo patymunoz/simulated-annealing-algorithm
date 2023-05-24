@@ -4,6 +4,38 @@
 
 This is an example of Simulated Annealing Algorithm. The problem is to find an optimal solution for the Travelling Salesman Problem (TSP). The algorithm is tested on a set of *n* cities.
 
+## Dependencies
+
+* [pandas](https://pandas.pydata.org/)
+* [numpy](https://numpy.org/)
+* [matplotlib](https://matplotlib.org/)
+* [openpyxl](https://openpyxl.readthedocs.io/en/stable/)
+* [geopy](https://geopy.readthedocs.io/en/stable/)
+* [geocoder](https://geocoder.readthedocs.io/)
+
+## How to run the code
+It is recommended to run the code in a virtual environment.
+
+1. To create a virtual environment, I recommend:
+
+```
+python install -r requirements.txt
+```
+
+But you can install the libraries manually if you want. Only be sure to install the libraries in the same version as the ones in the requirements.txt file and use **python 3.11**.
+
+2. Run the code
+
+There are two notebooks that you can run:
+
+a) `generate-distances.ipynb`
+
+b) `simulated-annealing.ipynb`
+
+You must run `generate-distances.ipynb` first to generate the distances between the cities. Then, you can run `simulated-annealing.ipynb` to find the optimal solution for the TSP.
+
+In the `generate-distances.ipynb` feel free to change the name of the cities if you want. This example uses some cities of Mexico, but you can adapt it to your needs and even increase o decrease the number of cities; just be consious that increasing the number of cities will increase the time to create of the matrix of distances.
+
 ## 1. The Travelling Salesman Problem contextualized 
 
 The TSP is a well-known problem in computer science. 
