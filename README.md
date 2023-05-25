@@ -121,7 +121,7 @@ But then we have the exponential function (q) which is the probability of accept
 
 #### 5.5. Cooling the temperature
 
-Every time the for loop is executed, the temperature is updated. In this case the have this formula: `T = 1000/(1+(t/5))`. But, notice that there are some other that you can use depending on the problem that you're trying to solve.
+Every time the for loop is executed, the temperature is updated. In this case the have this formula: `T = 1000/(1+(t))`. But, notice that there are some other that you can use depending on the problem that you're trying to solve.
 
 #### 5.6. Stop criteria
 
