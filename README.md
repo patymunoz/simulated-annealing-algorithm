@@ -1,5 +1,7 @@
 # Simulated Annealing Algorithm (SA) 🌡️
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/patymunoz/simulated-annealing-algorithm/v0.1.0)
+
 ## Introduction
 
 This is an example of Simulated Annealing Algorithm. The problem is to find an optimal solution for the Travelling Salesman Problem (TSP). The algorithm is tested on a set of *n* cities.
